@@ -17,4 +17,5 @@ It means there could be situation when thread A stores new transaction, thread B
 ### Possible improvements
 
 1. Implement persistent version of TransactionRepository or use TransactionRepository backed by generic in-memory indexed collection e.g. [CQEngine](https://github.com/npgall/cqengine/)
-2. Add Swagger UI to allow viewing and invoking service end-points. 
+2. Add Swagger UI to allow viewing and invoking service end-points.
+3. Use [Lombok](https://projectlombok.org/) to get rid of builder-plate code (builders, @Data beans with getters and setters, equals, hashCode etc.)

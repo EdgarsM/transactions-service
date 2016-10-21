@@ -1,19 +1,19 @@
 buildscript {
-	ext {
-		springBootVersion = '1.4.1.RELEASE'
+    ext {
+        springBootVersion = '1.4.1.RELEASE'
         restAssuredVersion = '3.0.1'
         junitVersion = '4.12'
         mockitoVersion = '1.10.19'
         groovyVersion = '2.4.7'
         spockVersion = '1.0-groovy-2.4'
         cglibVersion = '3.2.4'
-	}
-	repositories {
-		mavenCentral()
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-	}
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
     configurations {
         compile.exclude module: "spring-boot-starter-tomcat"
     }
@@ -25,22 +25,22 @@ apply plugin: 'spring-boot'
 apply plugin: 'groovy'
 
 jar {
-	baseName = 'transactions-service'
-	version = '0.0.1-SNAPSHOT'
+    baseName = 'transactions-service'
+    version = '0.0.1-SNAPSHOT'
 }
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
-dependencies {
-	compile('org.springframework.boot:spring-boot-starter-jersey')
+dependencies { 
+    compile('org.springframework.boot:spring-boot-starter-jersey')
     // Prefer Undertow over Tomcat
     compile("org.springframework.boot:spring-boot-starter-undertow")
     
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile("io.rest-assured:rest-assured:$restAssuredVersion")
     testCompile("junit:junit:$junitVersion")
     testCompile("org.mockito:mockito-core:$mockitoVersion")

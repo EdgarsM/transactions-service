@@ -25,7 +25,7 @@ public class InMemoryTransactionRepositoryTest {
     public ExpectedException thrown = ExpectedException.none();
 
     @Test
-    public void shouldStoreAndRetrieveTransaction() {
+    public void shouldJoinParentChildCollectionOnStore() {
         //given
         Transaction transaction = spy(new Transaction(1L, TEN, "all"));
         

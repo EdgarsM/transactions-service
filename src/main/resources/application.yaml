@@ -1,0 +1,7 @@
+# Initialize Jersey before first request - bit slower startup but first request time not extended because of initialization
+spring:
+  jersey:
+    servlet:
+      load-on-startup: 1
+server:
+  port: 80

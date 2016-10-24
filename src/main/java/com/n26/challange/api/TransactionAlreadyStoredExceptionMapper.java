@@ -12,6 +12,6 @@ import com.n26.challange.domain.TransactionAlreadyStoredException;
 public class TransactionAlreadyStoredExceptionMapper implements ExceptionMapper<TransactionAlreadyStoredException> {
 
     public Response toResponse(TransactionAlreadyStoredException ex) {
-        return Response.status(NOT_ACCEPTABLE).entity(new ErrorStatus(ex.getMessage())).build();
+        return Response.status(BAD_REQUEST).entity(new ErrorStatus(ex.getMessage())).build();
     }
 }

@@ -69,7 +69,7 @@ public class TransactionsResourceTransactionStoringTest extends RestAssuredBased
         when().
                 put("/{transactionId}", 32).
         then().
-                statusCode(NOT_ACCEPTABLE.getStatusCode()).
+                statusCode(BAD_REQUEST.getStatusCode()).
                 body("status", is("error")).
                 body("message", containsString(notExistingParentTransactionId.toString()));
     }
@@ -83,7 +83,7 @@ public class TransactionsResourceTransactionStoringTest extends RestAssuredBased
         when().
                 put("/{transactionId}", existingTransactionId).
         then().
-                statusCode(NOT_ACCEPTABLE.getStatusCode()).
+                statusCode(BAD_REQUEST.getStatusCode()).
                 body("status", is("error")).
                 body("message", containsString(existingTransactionId.toString()));
     }
@@ -97,7 +97,7 @@ public class TransactionsResourceTransactionStoringTest extends RestAssuredBased
         when().
                 put("/{transactionId}", transactionId).
         then().
-                statusCode(NOT_ACCEPTABLE.getStatusCode()).
+                statusCode(BAD_REQUEST.getStatusCode()).
                 body("status", is("error")).
                 body("message", containsString(transactionId.toString()));
     }
